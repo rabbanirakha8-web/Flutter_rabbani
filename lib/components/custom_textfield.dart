@@ -24,7 +24,7 @@ class MYTextfield extends StatelessWidget {
     return TextField(
       controller: txtController,
       decoration: InputDecoration(hint: Text(myHint),
-     fillColor: const Color.fromARGB(255, 207, 100, 100), 
+     fillColor: const Color.fromARGB(255, 184, 159, 159), 
       filled: true,
       
       border: OutlineInputBorder(borderRadius: BorderRadius.circular(cornerRadius))),
