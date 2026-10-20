@@ -3,7 +3,8 @@ import 'package:project_flutter_pertama/models/product_model.dart';
 
 class ListProductController extends GetxController {
 
-List<ProductModel> listProduk = [
+//RxList<ProdukModel> listProduk
+RxList<ProductModel> initialData = [
     ProductModel(
       namaProduk: "Samsung Galaxy Fold",
       harga: "10 juta",
@@ -56,8 +57,23 @@ List<ProductModel> listProduk = [
       imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjbbjPAW4y-sbwwNcf04vgRTzYZMRV3uKiTzQ1rbQJYBiLcgRbMtFAZECS&s=10", 
       namaToko: "Kudus Cell",
       review: "HP high-end dengan performa gaming yang luar biasa.",
-      rating: "4.4",
+      rating: "4.8",
     ),
-  ];
+  ].obs;
+
+  var listProduk = <ProductModel>[].obs;
+
+  @override
+  void onInit() {
+    super.onInit();
+    // Isi listProduk saat controller pertama kali dimuat
+    listProduk.assignAll(initialData);
+  }
+
+  //buat ngulang data awal
+  Future<void> refreshData() async {
+    await Future.delayed(const Duration(seconds: 1));
+    listProduk.assignAll(initialData); 
+  }
 
 }

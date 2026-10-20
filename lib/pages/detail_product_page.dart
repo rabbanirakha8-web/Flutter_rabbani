@@ -1,24 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:project_flutter_pertama/controller/list_product_controller.dart';
+import 'package:project_flutter_pertama/controller/list_product_detail_controller.dart';
 import 'package:project_flutter_pertama/models/product_model.dart';
 
 class DetailProductPage extends StatelessWidget {
-  const DetailProductPage({super.key});
+   DetailProductPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final ProductModel product = Get.arguments as ProductModel;
+    final controller = Get.put(ListProductDetailController());
 
+    
    return Scaffold(
       backgroundColor: const Color.fromARGB(255, 174, 163, 163), 
       appBar: AppBar(
-        title: Text(product.namaProduk),
+        title: Text(controller.namaProduk),
         backgroundColor: const Color.fromARGB(255, 255, 158, 60),
         foregroundColor: Colors.black,
         elevation: 0.5,
       ),
-      body: SingleChildScrollView(
+      body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(         
           children: [
@@ -31,17 +33,15 @@ class DetailProductPage extends StatelessWidget {
                 borderRadius: BorderRadius.circular(12),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black.withOpacity(0.05),
+                    color: Colors.black,
                     blurRadius: 8,
                     offset: const Offset(0, 2),
                   ),
                 ],
-              ),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(12),
-                child: product.imageUrl.isNotEmpty
+              ),              
+                child: controller.imageUrl.isNotEmpty
                     ? Image.network(
-                        product.imageUrl,
+                        controller.imageUrl,
                         fit: BoxFit.cover,
                         errorBuilder: (context, error, stackTrace) => Container(
                           color: Colors.grey[300],
@@ -49,7 +49,7 @@ class DetailProductPage extends StatelessWidget {
                         ),                      
                       )
                     : const Icon(Icons.image, size: 80, color: Colors.grey),
-              ),
+              
             ),
             const SizedBox(height: 12),
 
@@ -68,16 +68,15 @@ class DetailProductPage extends StatelessWidget {
                   ),
                 ],
               ),
-              child: Column(
-              
+              child: Column(             
                 children: [
                   Text(
-                    product.namaProduk,
+                    controller.namaProduk,
                     style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   ),
                   const SizedBox(height: 8),
                   Text(
-                    "Rp ${product.harga}",
+                    "Rp ${controller.harga}",
                     style: TextStyle(
                       fontSize: 18,
                       color: const Color.fromARGB(255, 0, 0, 0),
@@ -113,7 +112,7 @@ class DetailProductPage extends StatelessWidget {
                       const Icon(Icons.store, color: Colors.blue),
                       const SizedBox(width: 8),
                       Text(
-                        product.namaToko.isNotEmpty ? product.namaToko : "Toko Belum Ada",
+                        controller.namaToko.isNotEmpty ? controller.namaToko : "Toko Belum Ada",
                         style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
                       ),
                     ],
@@ -124,7 +123,7 @@ class DetailProductPage extends StatelessWidget {
                       const Icon(Icons.star, color: Colors.amber, size: 20),
                       const SizedBox(width: 4),
                       Text(
-                        product.rating,
+                        controller.rating,
                         style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
                       ),
                     ],
@@ -157,13 +156,14 @@ class DetailProductPage extends StatelessWidget {
                   ),
                   const SizedBox(height: 8),
                   Text(
-                    product.deskripsi.isNotEmpty ? product.deskripsi : "Tidak ada deskripsi produk.",
+                    controller.deskripsi.isNotEmpty ? controller.deskripsi : "Tidak ada deskripsi produk.",
                     style: TextStyle(fontSize: 14, color: const Color.fromARGB(255, 16, 16, 16), height: 1.4),
                   ),
                 ],
               ),
             ),
             const SizedBox(height: 12),
+
             // ripiw
             Container(
                width: double.infinity,
@@ -184,7 +184,12 @@ class DetailProductPage extends StatelessWidget {
                     "Ulasan Pembeli:",
                     style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
                   ),
-                  const SizedBox(height: 8),                 
+
+                  const SizedBox(height: 8),   
+                  Text(
+                     controller.review ,
+                    style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                  ),              
                 ],
               ),
             ),
