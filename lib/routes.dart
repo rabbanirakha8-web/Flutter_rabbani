@@ -4,6 +4,8 @@ import 'package:project_flutter_pertama/pages/list_product_page.dart';
 import 'package:project_flutter_pertama/pages/main_menu_page.dart';
 import 'package:project_flutter_pertama/pages/registration_page.dart';
 import 'package:project_flutter_pertama/pages/detail_product_page.dart';
+import 'package:project_flutter_pertama/pages/menu_drawer_page.dart';
+
 
 class Routes {
   // list halaman yang ada didalam aplikasi 
@@ -12,6 +14,8 @@ class Routes {
   static const String listProduct = "/listProduct";
   static const String detailproduk = "/detailproduk";
   static const String mainmenu = "/mainmenu";
+  static const String menudrawer = "/menudrawer";
+
 
 
 
@@ -22,6 +26,8 @@ class Routes {
     GetPage(name: listProduct, page: ()=> ListProductPage()),
     GetPage(name: detailproduk, page: ()=> DetailProductPage()),
     GetPage(name: mainmenu, page: ()=> MainMenuPage()),
+    GetPage(name: menudrawer, page: ()=> MenuDrawer()),
+
   ];
 
   // static String get ListProductDetailPage => detailproduk;

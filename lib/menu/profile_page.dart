@@ -156,7 +156,7 @@ class ProfilePage extends StatelessWidget {
                     title: Text("Instagram", style: TextStyle(fontSize: 12, color: Colors.grey)),
                     subtitle: Text(" Rakha Setengah Mateng ", style: TextStyle(fontSize: 14, color: Colors.black, fontWeight: FontWeight.w500)),
                   ),
-                  Divider(indent: 70, endIndent: 20, height: 1, color: Colors.black12),
+                  
              
              
                 ],
