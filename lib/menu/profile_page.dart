@@ -125,7 +125,7 @@ class ProfilePage extends StatelessWidget {
                   ListTile(
                     leading: Icon(Icons.email_outlined, color: Colors.grey),
                     title: Text("Email", style: TextStyle(fontSize: 12, color: Colors.grey)),
-                    subtitle: Text("rakha.rabbani@example.com", style: TextStyle(fontSize: 14, color: Colors.black, fontWeight: FontWeight.w500)),
+                    subtitle: Text("rakharabbani@gmail.com", style: TextStyle(fontSize: 14, color: Colors.black, fontWeight: FontWeight.w500)),
                   ),
                   Divider(indent: 70, endIndent: 20, height: 1, color: Colors.black12), 
 
