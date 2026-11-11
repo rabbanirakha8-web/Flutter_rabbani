@@ -68,6 +68,14 @@ class MenuDrawer extends StatelessWidget {
                 Navigator.pop(context);
               },
             ),
+            ListTile(
+              leading: const Icon(Icons.phone, color: Colors.blueAccent),
+              title: const Text('Gadget', style: TextStyle(fontSize: 16)),
+              onTap: () {
+                menucontoller.changePage(3);
+                Navigator.pop(context);
+              },
+            ),
           ],
         ),
       ),

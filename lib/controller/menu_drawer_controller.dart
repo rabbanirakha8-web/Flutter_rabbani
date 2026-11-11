@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:project_flutter_pertama/controller/main_menu_controller.dart';
+import 'package:project_flutter_pertama/menu/gadget_page.dart';
 import 'package:project_flutter_pertama/menu/history_page.dart';
 import 'package:project_flutter_pertama/menu/home_page.dart';
 import 'package:project_flutter_pertama/menu/profile_page.dart';
@@ -16,5 +17,5 @@ class MainMenuDrawerController extends GetxController{
   }
 
 
-  List<Widget> listPages = [HomePage(), HistoryPage(), ProfilePage()];
+  List<Widget> listPages = [HomePage(), HistoryPage(), ProfilePage(), GadgetPage()];
 }

@@ -6,6 +6,7 @@ import 'package:project_flutter_pertama/pages/registration_page.dart';
 import 'package:project_flutter_pertama/pages/detail_product_page.dart';
 import 'package:project_flutter_pertama/pages/menu_drawer_page.dart';
 import 'package:project_flutter_pertama/pages/login_clone.dart';
+import 'package:project_flutter_pertama/pages/detail_gadget_page.dart';
 
 
 class Routes {
@@ -17,6 +18,7 @@ class Routes {
   static const String mainmenu = "/mainmenu";
   static const String menudrawer = "/menudrawer";
   static const String loginclone = "/loginclonepage";
+  static const String detailgadget = "/detailgadgetpage";
 
 
 
@@ -29,6 +31,7 @@ class Routes {
     GetPage(name: mainmenu, page: ()=> MainMenuPage()),
     GetPage(name: menudrawer, page: ()=> MenuDrawer()),
     GetPage(name: loginclone, page: ()=> LoginClonePage()),
+    GetPage(name: detailgadget, page: ()=> DetailGadgetPage()),
 
   ];
 

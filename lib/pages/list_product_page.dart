@@ -37,7 +37,7 @@ class ListProductPage extends StatelessWidget {
                   background: Container(
                     margin: const EdgeInsets.only(bottom: 12),
                     decoration: BoxDecoration(
-                      color: Colors.red,
+                      color: const Color.fromARGB(255, 18, 149, 236),
                       borderRadius: BorderRadius.circular(12),
                     ),
                     alignment: Alignment.centerLeft,
